@@ -8,7 +8,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
   },
-  entry: './src/index.js',
+  entry: ['regenerator-runtime/runtime.js', './src/index.js'],
   output: {
     filename: 'main.[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -17,6 +17,11 @@ module.exports = {
   devtool: false,
   module: {
     rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
       {
         test: /\.csv$/,
         loader: 'csv-loader',

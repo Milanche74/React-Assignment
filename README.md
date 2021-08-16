@@ -11,3 +11,7 @@ Make sure You have nvm installed and run `nvm use` to have the correct node/npm 
 - [ ] * Translate something
 - [ ] * Add new key
 
+## Webpack
+
+- [ ] Configure webpack to be able loading css files
+- [ ] Load css to the App (uncomment the css import)

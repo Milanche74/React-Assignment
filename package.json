@@ -21,6 +21,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-lodash-fp": "^2.2.0-a1",
+    "eslint-plugin-react": "^7.24.0",
     "form-data": "^4.0.0",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.1",
@@ -33,6 +34,11 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
     "csv-loader": "^3.0.3",
     "dotenv": "^10.0.0",
     "fs-extra": "^10.0.0",
@@ -41,6 +47,10 @@
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
     "parse-link-header": "^1.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "regenerator-runtime": "^0.13.9",
     "rxjs": "^7.3.0",
     "yargs": "^17.1.1"
   }

@@ -6,10 +6,13 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 9,
+    ecmaVersion: 2020,
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   plugins: ['lodash-fp'],
 };

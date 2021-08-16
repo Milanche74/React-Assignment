@@ -10,7 +10,7 @@ const selectedCity = new BehaviorSubject('Istanbul');
   setTimeout(() => {
     loading.next(false);
     data.next(csv);
-  }, 1500); // Simulate network request
+  }, 3000); // Simulate network request
 })();
 
 const populationForSelectedCity = combineLatest([

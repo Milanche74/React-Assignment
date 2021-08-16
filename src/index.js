@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import Chart from './widgets/chart';
 import CitySelector from './widgets/citySelector';
 import dataProvider from './dataProvider';
+//import './main.css';
 
 function renderAppInterface() {
   const header = document.createElement('h1');

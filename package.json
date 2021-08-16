@@ -43,6 +43,8 @@
     "dotenv": "^10.0.0",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",
+    "highcharts": "^9.1.2",
+    "highcharts-react-official": "^3.0.0",
     "i18next": "^20.4.0",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",

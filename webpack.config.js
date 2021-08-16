@@ -29,7 +29,7 @@ module.exports = {
           dynamicTyping: true,
           header: true,
           skipEmptyLines: true,
-          preview: 100,
+          // preview: 100,
         },
       },
     ],

@@ -49,12 +49,6 @@ export default function Chart() {
       .subscribe(setChartOptions);
     return () => subscription.unsubscribe();
   }, []);
-  useEffect(() => {
-    const subscription = dataProvider.selectedCityStream.subscribe((data) => {
-      console.log(data);
-    });
-    return () => subscription.unsubscribe();
-  }, []);
 
   return (
     <div>

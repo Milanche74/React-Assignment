@@ -15,6 +15,20 @@ module.exports = {
     clean: true,
   },
   devtool: false,
+  module: {
+    rules: [
+      {
+        test: /\.csv$/,
+        loader: 'csv-loader',
+        options: {
+          dynamicTyping: true,
+          header: true,
+          skipEmptyLines: true,
+          preview: 100,
+        },
+      },
+    ],
+  },
   plugins: [
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',

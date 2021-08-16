@@ -33,6 +33,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "csv-loader": "^3.0.3",
     "dotenv": "^10.0.0",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",

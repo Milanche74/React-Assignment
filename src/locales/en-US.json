@@ -1,3 +1,5 @@
 {
-  "title": "Title"
+  "title": "Title",
+  "loading": "Loading",
+  "loaded": "Loaded"
 }

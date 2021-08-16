@@ -1,13 +1,16 @@
 import i18n from './i18n';
 import i18next from 'i18next';
 import renderLanguageSelector from './widgets/languageSelector';
+import renderChart from './widgets/chart';
 
 function renderAppInterface() {
   const header = document.createElement('h1');
   header.innerText = i18n.t('title');
-  const chart = document.createElement('div');
+  const chartContainer = document.createElement('div');
 
-  document.getElementById('app').replaceChildren(header, chart);
+  document.getElementById('app').replaceChildren(header, chartContainer);
+
+  renderChart(chartContainer);
 }
 
 function renderRoot() {

@@ -5,6 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './widgets/chart';
 import CitySelector from './widgets/citySelector';
+// import ComparePopulation from './widgets/comparePopulation';
 import dataProvider from './dataProvider';
 //import './main.css';
 
@@ -13,8 +14,9 @@ function renderAppInterface() {
   header.innerText = i18n.t('title');
   const citySelector = document.createElement('div');
   const chartContainer = document.createElement('div');
+  const compare = document.createElement('div');
 
-  document.getElementById('app').replaceChildren(header, citySelector, chartContainer);
+  document.getElementById('app').replaceChildren(header, citySelector, chartContainer, compare);
 
   ReactDOM.render(
     <CitySelector
@@ -26,6 +28,7 @@ function renderAppInterface() {
     citySelector
   );
   ReactDOM.render(<Chart />, chartContainer);
+  // ReactDOM.render(<ComparePopulation />, compare);
 }
 
 function renderRoot() {

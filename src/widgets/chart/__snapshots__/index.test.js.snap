@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart getPopulation should filter out empty population data 1`] = `
+Array [
+  Array [
+    "2012",
+    10,
+  ],
+  Array [
+    "2013",
+    15,
+  ],
+  Array [
+    "2014",
+    0,
+  ],
+]
+`;

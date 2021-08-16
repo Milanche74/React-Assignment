@@ -1,3 +1,6 @@
 {
-  "title": "Cim"
+  "title": "Cim",
+  "loading": "Betöltés",
+  "loaded": "Adatok készen",
+  "population": "Lakosság száma"
 }

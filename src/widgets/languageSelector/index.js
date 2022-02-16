@@ -4,8 +4,8 @@ import i18next from 'i18next';
 
 export default function renderLanguageSelector() {
   const languageSelector = document.createElement('div');
-  const buttons = ['en-US', 'hu-HU', 'cimode'].map((locale) => {
-    const button = document.createElement('button');
+  const buttons = ['en-US', 'hu-HU', 'sr-RS'].map((locale) => {
+    const button = document.createElement('button'); 
     button.innerText = locale;
     button.setAttribute('lang', locale);
     languageSelector.appendChild(button);

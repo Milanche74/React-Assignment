@@ -1,4 +1,4 @@
-import i18n from './i18n';
+import i18n from './i18n'; 
 import i18next from 'i18next';
 import renderLanguageSelector from './widgets/languageSelector';
 import React from 'react';
@@ -7,7 +7,7 @@ import Chart from './widgets/chart';
 import CitySelector from './widgets/citySelector';
 // import ComparePopulation from './widgets/comparePopulation';
 import dataProvider from './dataProvider';
-//import './main.css';
+import './main.css';
 
 function renderAppInterface() {
   const header = document.createElement('h1');
@@ -48,6 +48,7 @@ function renderRoot() {
 i18next.on('languageChanged', () => {
   renderAppInterface();
 });
+
 
 document.body.appendChild(renderRoot());
 

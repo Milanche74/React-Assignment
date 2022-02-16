@@ -17,6 +17,10 @@ const getPopulation = flow(
   reject(flow(get('population'), isNil)),
   lmap(({ year, population }) => [year, population])
 );
+const getEstimatedPopulation = flow(
+  reject(flow(get('projected'), isNil)),
+  lmap(({year, projected}) => [year, projected])
+)
 
 export default function Chart() {
   const [loading, setLoading] = React.useState();
@@ -39,8 +43,8 @@ export default function Chart() {
                 data: getPopulation(data),
               },
               {
-                name: 'Projected',
-                // data: getEstimatedPopulation(data),
+                name: i18n.t('projected'),
+                data: getEstimatedPopulation(data),
               },
             ],
           };
@@ -53,7 +57,9 @@ export default function Chart() {
   return (
     <div>
       <div>{loading ? i18n.t('loading') : i18n.t('loaded')}</div>
-      {!loading && <HighchartsReact highcharts={Highcharts} options={chartOptions} />}
+      {loading
+      ? <div className="lds-hourglass"> </div>
+      : <HighchartsReact highcharts={Highcharts} options={chartOptions} />}
     </div>
   );
 }

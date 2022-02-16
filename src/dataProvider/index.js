@@ -1,15 +1,25 @@
 import { negate, isUndefined } from 'lodash';
 import { BehaviorSubject, combineLatest, map, filter } from 'rxjs';
+import { uniq } from 'lodash';
 import csv from '../../data/city-populations-to-2035.csv';
+
 
 const loading = new BehaviorSubject(true);
 const data = new BehaviorSubject([]);
-const selectedCity = new BehaviorSubject('Istanbul');
+const selectedCity = new BehaviorSubject();
+// since this file acts as a server, I decided to extract an array of 
+// city names from data because in real-life situation,
+// I wouldn't do data manipulation on client side
+const cities = new BehaviorSubject([]);
 
 (async function init() {
   setTimeout(() => {
     loading.next(false);
     data.next(csv);
+    let extractedCities = uniq(data._value.map(({ city }) => city));
+    cities.next(extractedCities);
+
+    console.log(cities._value);
   }, 3000); // Simulate network request
 })();
 
@@ -27,4 +37,5 @@ export default {
   dataStream: data,
   selectedCityStream: selectedCity,
   populationForSelectedCity,
+  citiesStream: cities,
 };

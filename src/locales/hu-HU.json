@@ -1,6 +1,8 @@
 {
-  "title": "Cim",
+  "title": "A város lakossága idő szerint",
   "loading": "Betöltés",
   "loaded": "Adatok készen",
-  "population": "Lakosság száma"
+  "population": "Lakosság száma",
+  "projected": "Becslés",
+  "selection": "Válasszon várost"
 }

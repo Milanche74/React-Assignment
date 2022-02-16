@@ -14,7 +14,7 @@ const baseOptions = {
 };
 
 const getPopulation = flow(
-  reject(flow(get('population'), isNil)),
+  reject(flow(get('population'), isNil)), 
   lmap(({ year, population }) => [year, population])
 );
 const getEstimatedPopulation = flow(
@@ -66,4 +66,5 @@ export default function Chart() {
 
 export const __test__ = {
   getPopulation,
+  getEstimatedPopulation,
 };

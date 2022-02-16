@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Chart getEstimatedPopulation should extract values of projected population only 1`] = `
+Array [
+  Array [
+    "2025",
+    10,
+  ],
+  Array [
+    "2030",
+    15,
+  ],
+  Array [
+    "2035",
+    0,
+  ],
+]
+`;
+
+
 exports[`Chart getPopulation should filter out empty population data 1`] = `
 Array [
   Array [

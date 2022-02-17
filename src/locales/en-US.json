@@ -4,5 +4,6 @@
   "loaded": "Loaded",
   "population": "Population",
   "projected": "Projected",
-  "selection": "Select a city"
+  "selection": "Select a city",
+  "compare": "Compare with another"
 }

@@ -39,7 +39,7 @@ export default function Chart() {
             ...baseOptions,
             series: [
               {
-                name: i18n.t('population'),
+                name: i18n.t('population'), 
                 data: getPopulation(data),
               },
               {

@@ -30,4 +30,8 @@ Make sure You have nvm installed and run `nvm use` to have the correct node/npm 
 - [x] Istanbul is hardcoded for the default selected city. Initially show a message that User has to select a city.
 - [x] Create a new component, a bar chart, which will allow comparing two cities population.
 
+## To Improve 
 
+- [ ] Think about app structure, find a way to group chart and select element together
+- [ ] Improve styling
+- [ ] Try to visualize data with another chart

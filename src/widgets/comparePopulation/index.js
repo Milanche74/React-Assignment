@@ -16,7 +16,7 @@ const baseOptions = {
     type: 'column',
   },
   // i18n didn't work here so I put it inside useEffect
-  
+
   // title: {
   //   text: i18n.t('compare-title'),
   // },
@@ -75,6 +75,11 @@ export default function ComparePopulation() {
             ...baseOptions,
             title: {
               text: i18n.t('compare-title'),
+            },
+            yAxis: {
+              title: {
+                text: i18n.t('values')
+              }
             },
             series: [
               {

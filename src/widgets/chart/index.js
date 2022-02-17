@@ -39,6 +39,11 @@ export default function Chart() {
             title: {
               text: i18n.t('population')
             },
+            yAxis: {
+              title: {
+                text: i18n.t('values')
+              }
+            },
             series: [
               {
                 name: i18n.t('population'), 

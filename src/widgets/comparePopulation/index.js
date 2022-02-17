@@ -11,6 +11,7 @@ import i18n from '../../i18n';
 import { __test__ as chartFunc } from '../chart';
 
 
+
 const baseOptions = {
   chart: {
     type: 'column',
@@ -89,6 +90,7 @@ export default function ComparePopulation() {
               {
                 name: data[1][0]?.city,
                 data: getColumnData(data[1]),
+                color: 'rgb(233,150,122)'
               },
             ],
           };

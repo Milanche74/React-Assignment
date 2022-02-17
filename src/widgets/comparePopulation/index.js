@@ -4,16 +4,22 @@ import { useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { map } from 'rxjs';
-import { flow, map as lmap, reject, get, isNil} from 'lodash/fp';
+import i18n from '../../i18n';
+
+
+// imported data sorting functions defined in chart component
+import { __test__ as chartFunc } from '../chart';
 
 
 const baseOptions = {
   chart: {
     type: 'column',
   },
-  title: {
-    text: 'Compare City1 and City2 population',
-  },
+  // i18n didn't work here so I put it inside useEffect
+  
+  // title: {
+  //   text: i18n.t('compare-title'),
+  // },
   // series: [
   //   {
   //     data: [
@@ -34,9 +40,8 @@ const baseOptions = {
   //     ],
   //   },
   // ],
-  series: []
+  
 };
-
 
 export default function ComparePopulation() {
   const [loading, setLoading] = React.useState();
@@ -53,34 +58,44 @@ export default function ComparePopulation() {
   }, []);
 
   useEffect(() => {
-
     // I got an infinite loop when I tried to declare this function in global scope,
     // so I put it here
-    const getColumnData = flow(
-      reject(flow(get('population'), isNil)),
-      lmap(({year, population})=> [year, population])
-    )
+
+    // merges data arrays
+    const getColumnData = (data) => {
+      const populationArray = chartFunc.getPopulation(data);
+      const estimatedArray = chartFunc.getEstimatedPopulation(data);
+      return populationArray.concat(estimatedArray);
+    };
+
     const subscription = dataProvider.dataForComparisonCity
-    .pipe(
-      map((data)=> {
-        return {
-          ...baseOptions,
-          series: [
-            {
-              name: data[0][0]?.city,
-              data: getColumnData(data[0])
+      .pipe(
+        map((data) => {
+          return {
+            ...baseOptions,
+            title: {
+              text: i18n.t('compare-title'),
             },
-            {
-              name: data[1][0]?.city,
-              data: getColumnData(data[1])
-            }
-          ]
-        }
-      })
-    ).subscribe(setChartOptions);
-    return () => subscription.unsubscribe()
-  },[]);
+            series: [
+              {
+                name: data[0][0]?.city,
+                data: getColumnData(data[0]),
+              },
+              {
+                name: data[1][0]?.city,
+                data: getColumnData(data[1]),
+              },
+            ],
+          };
+        })
+      )
+      .subscribe(setChartOptions);
+    return () => subscription.unsubscribe();
+  }, []);
 
-
-  return <div>{compareSelection && <HighchartsReact highcharts={Highcharts} options={chartOptions} />}</div>;
+  return (
+    <div>
+      {compareSelection && <HighchartsReact highcharts={Highcharts} options={chartOptions} />}
+    </div>
+  );
 }

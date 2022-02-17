@@ -7,11 +7,11 @@ import { flow, map as lmap, reject, get, isNil } from 'lodash/fp';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-const baseOptions = {
-  title: {
-    text: i18n.t('population'),
-  },
-};
+// const baseOptions = {
+//   title: {
+//     text: i18n.t('population'),
+//   },
+// };
 
 const getPopulation = flow(
   reject(flow(get('population'), isNil)), 
@@ -36,7 +36,9 @@ export default function Chart() {
       .pipe(
         map((data) => {
           return {
-            ...baseOptions,
+            title: {
+              text: i18n.t('population')
+            },
             series: [
               {
                 name: i18n.t('population'), 

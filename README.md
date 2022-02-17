@@ -29,3 +29,5 @@ Make sure You have nvm installed and run `nvm use` to have the correct node/npm 
 - [x] Cities are hardcoded in `citySelector`. Load them dynamically.
 - [x] Istanbul is hardcoded for the default selected city. Initially show a message that User has to select a city.
 - [x] Create a new component, a bar chart, which will allow comparing two cities population.
+
+

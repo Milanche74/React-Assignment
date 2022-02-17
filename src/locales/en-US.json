@@ -5,5 +5,6 @@
   "population": "Population",
   "projected": "Projected",
   "selection": "Select a city",
-  "compare": "Compare with another"
+  "compare": "Compare with another",
+  "compare-title": "Compare two cities population"
 }

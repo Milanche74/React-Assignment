@@ -15,4 +15,9 @@ module.exports = {
     },
   },
   plugins: ['lodash-fp'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };

@@ -45,7 +45,7 @@ const baseOptions = {
 };
 
 export default function ComparePopulation() {
-  const [loading, setLoading] = React.useState();
+  // const [loading, setLoading] = React.useState();
   const [chartOptions, setChartOptions] = React.useState(baseOptions);
   const [compareSelection, setCompareSelection] = React.useState();
 
@@ -53,10 +53,10 @@ export default function ComparePopulation() {
     const subscription = dataProvider.comparisonCityStream.subscribe(setCompareSelection);
     return () => subscription.unsubscribe();
   }, []);
-  useEffect(() => {
-    const subscription = dataProvider.loadingStream.subscribe(setLoading);
-    return () => subscription.unsubscribe();
-  }, []);
+  // useEffect(() => {
+  //   const subscription = dataProvider.loadingStream.subscribe(setLoading);
+  //   return () => subscription.unsubscribe();
+  // }, []);
 
   useEffect(() => {
     // I got an infinite loop when I tried to declare this function in global scope,

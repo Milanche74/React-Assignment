@@ -32,6 +32,6 @@ Make sure You have nvm installed and run `nvm use` to have the correct node/npm 
 
 ## To Improve 
 
-- [ ] Think about app structure, find a way to group chart and select element together
+- [x] I grouped each city selector with coresponding chart in individuals sections
 - [ ] Improve styling
 - [ ] Try to visualize data with another chart

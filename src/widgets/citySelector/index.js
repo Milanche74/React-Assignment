@@ -12,7 +12,7 @@ const propTypes = {
 export default function CitySelector({ role, handleSelection }) {
   // const cities = ['Beijing', 'Buenos Aires', 'Istanbul'];
 
-  const [selectedCity, setSelectedCity] = React.useState('Choose');
+  const [selectedCity, setSelectedCity] = React.useState('');
   const [cities, setCities] = React.useState([]);
 
 
